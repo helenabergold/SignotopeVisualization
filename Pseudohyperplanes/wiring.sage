@@ -112,5 +112,5 @@ if 1: # output of 2d sweep versions.
 #colors =['aqua', 'chocolate', 'deepskyblue', 'darkgoldenrod', 'darkslateblue', 'darkred', 'indigo', 'indianred']
 colors = rainbow(n)
 
-plt = sum(list_plot(complete_path[j], plotjoined=True, color = colors[j] , thickness =1.5,frame= False, axes = False, aspect_ratio = 2) for j in N).save('foo.pdf', frame = False, axes = False)
+plt = sum(list_plot(complete_path[j], plotjoined=True, color = colors[j] , thickness =1.5,frame= False, axes = False, aspect_ratio = 2) for j in N).save('wiring'+str(n)+'.pdf', frame = False, axes = False)
         
