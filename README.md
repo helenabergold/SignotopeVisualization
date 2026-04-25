@@ -25,7 +25,7 @@ The `examples/` folder contains:
 | File | Rank | n | Description |
 |------|------|---|-------------|
 | `rank3/r3_n3_minus.txt` | 3 | 3 | all minus |
-| `rank3/r3_n4_all-.txt` | 3 | 4 | all minus |
+| `rank3/r3_n4_allminus.txt` | 3 | 4 | all minus |
 | `rank3/r3_n6_allplus.txt` | 3 | 6 | all plus (uniform) |
 | `rank3/r3_n9_nonpappus.txt` | 3 | 9 | non-Pappus configuration |
 | `rank3/r3_n9_ringel.txt` | 3 | 9 | Ringel arrangement |
