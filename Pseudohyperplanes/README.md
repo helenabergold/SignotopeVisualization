@@ -8,14 +8,14 @@ Visualization of signotopes as **pseudohyperplane arrangements** via wiring diag
 
 | Script | Rank | Output | Usage |
 |--------|------|--------|-------|
-| `wiring.sage` | 3 | `foo.pdf` — wiring diagram (pseudoline arrangement) | command-line |
+| `wiring.sage` | 3 | `wiring<n>.pdf` — wiring diagram (pseudoline arrangement) | command-line |
 | `sweep_2d.sage` | 4 | `sweep<n>_4_<i>.pdf`, `multi<n>_4.pdf` — sweep steps as 2D diagrams | command-line |
 | `sweep_dim3.sage` | 4 | interactive 3D sweep visualization | via Jupyter notebook |
 | `visualization_dim3.ipynb` | 4 | Jupyter notebook calling `sweep_dim3.sage` | Jupyter |
 
 ## `wiring.sage` — Rank 3, Wiring Diagram
 
-Computes the pseudoline arrangement (wiring diagram) corresponding to a rank-3 signotope. Outputs `foo.pdf` with the wiring diagram.
+Computes the pseudoline arrangement (wiring diagram) corresponding to a rank-3 signotope. Outputs `wiring<n>.pdf`.
 
 ```bash
 sage wiring.sage <rank> <n> <input_file>
@@ -35,7 +35,7 @@ Run from the `Pseudohyperplanes/` directory.
 ```bash
 cd Pseudohyperplanes
 sage wiring.sage 3 6 ../examples/rank3/r3_n6_allplus.txt
-# Output: foo.pdf
+# Output: wiring6.pdf
 ```
 
 **Non-Pappus configuration, n=9:**
@@ -43,7 +43,7 @@ sage wiring.sage 3 6 ../examples/rank3/r3_n6_allplus.txt
 ```bash
 cd Pseudohyperplanes
 sage wiring.sage 3 9 ../examples/rank3/r3_n9_nonpappus.txt
-# Output: foo.pdf
+# Output: wiring9.pdf
 ```
 
 ## `sweep_2d.sage` — Rank 4, 2D Sweep Diagrams
@@ -66,7 +66,7 @@ sage sweep_2d.sage <rank> <n> <input_file>
 ```bash
 cd Pseudohyperplanes
 sage sweep_2d.sage 4 8 ../examples/rank4/r4n8_nonextendable.txt
-# Output: sweep8_4_0.pdf ... sweep8_4_26.pdf, multi8_4.pdf, foo.pdf
+# Output: sweep8_4_0.pdf ... sweep8_4_26.pdf, multi8_4.pdf
 ```
 
 ## `sweep_dim3.sage` + `visualization_dim3.ipynb` — Rank 4, 3D Visualization
