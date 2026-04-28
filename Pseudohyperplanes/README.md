@@ -71,29 +71,42 @@ sage sweep_2d.sage 4 8 ../examples/rank4/r4n8_nonextendable.txt
 
 ## `sweep_dim3.sage` + `visualization_dim3.ipynb` — Rank 4, 3D Visualization
 
-Visualizes a rank-4 signotope as a 3D sweep: each element traces a path through 3D space as the sweep progresses. The result is an interactive 3D graphics object shown in the notebook.
+Visualizes a rank-4 signotope as a 3D sweep: each element traces a path through 3D space as the sweep progresses. The result is an interactive 3D graphics object.
 
-Open the notebook:
+> **Note:** The interactive 3D view is only available in the Sage CLI or a Jupyter notebook — it cannot be displayed as a static PDF. When run from the command line, the script automatically saves a self-contained HTML file (`sweep3d_<n>_<r>.html`) with an interactive Three.js viewer that works in any browser (requires internet for loading Three.js).
+
+### Option 1: Command line
+
+```bash
+cd Pseudohyperplanes
+sage sweep_dim3.sage 4 8 ../examples/rank4/r4n8_nonextendable.txt
+# Output: sweep3d_8_4.html
+```
+
+### Option 2: Sage CLI interactive
+
+```bash
+cd Pseudohyperplanes
+sage
+```
+
+Then in the Sage session:
+
+```python
+args = [None, 4, 8, '+++++-+-++++-++----+++-+++++-++-+++----------+++--+--+++++-++-+++--+++']
+# args[1] = rank (must be 4), args[2] = n, args[3] = signotope string
+load('sweep_dim3.sage')
+# shows interactive 3D plot
+```
+
+### Option 3: Jupyter Notebook
 
 ```bash
 sage -n jupyter
 # then open visualization_dim3.ipynb
 ```
 
-The first cell sets the parameters:
-
-```python
-args = [None, 4, 8, '+++++-+-++++-++----+++-+++++-++-+++----------+++--+--+++++-++-+++--+++']
-# args[1] = rank (must be 4), args[2] = n, args[3] = signotope string
-```
-
-Then run the next cell:
-
-```python
-load('sweep_dim3.sage')
-```
-
-The 3D plot is displayed interactively in the notebook output.
+The first cell sets the parameters, the second cell loads the script. The 3D plot is displayed interactively in the notebook output.
 
 ## Input Format
 

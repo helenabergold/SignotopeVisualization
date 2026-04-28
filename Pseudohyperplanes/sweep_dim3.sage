@@ -14,21 +14,23 @@ from basics_sweep import *
 #input and basic definitions
 
 
-if 1:
+from sys import argv as _argv
+if _argv[0].endswith('.sage.py'):
+    # called from command line: sage sweep_dim3.sage <rank> <n> <file>
+    r = int(_argv[1])
+    assert ( r == 4 )
+    n = int(_argv[2])
+    f = open(_argv[3])
+    line = f.readline()
+    if not line: exit('no input')
+    print()
+    print( "input",line,)
+else:
+    # called via load() in sage CLI or notebook: set args beforehand
     r = args[1]
     assert ( r == 4 )
     n = args[2]
     line = args[3]
-#else: 
-#   r = int(argv[1]) 
-#   assert ( r == 4 )
-#    n = int(argv[2])
-#    from sys import *
-#    f = open(argv[3])
-#    line = f.readline()
-#    if not line: exit('no input')
-#    print()
-#    print( "input",line,)
 
 
 N = range(n)
@@ -146,15 +148,15 @@ for j in reversed(list(N)):
     #    pts.append(point3d(p , size=100, color = 'red', #opacity=0.8, 
     #                     figsize = 40, frame = False))
     #    break
-L = sum(l[j] for j in N)#.save('3dplot'+'.png')
-#Green = sum(l[j] for j in N if j%2 ==0)+sum(p for p in pts)
-#Blue = sum(l[j] for j in N if j%2 ==1)
-#for i, j in combinations(N,2):
-#    show(l[i]+l[j])
-#show(Green)
-#show(Blue)
-show(L)
-#print('end')
-#print("start nodejs")
-#L.show(viewer="nodejs")
+L = sum(l[j] for j in N)
+
+from sys import argv as _argv
+if _argv[0].endswith('.sage.py'):
+    # called from command line: sage sweep_dim3.sage ...
+    filename = f'sweep3d_{n}_{r}.html'
+    L.save(filename, online=True)
+    print(f'saved to {filename}')
+else:
+    # called via load(): show interactively
+    show(L)
 
